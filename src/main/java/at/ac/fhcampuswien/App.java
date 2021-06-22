@@ -20,14 +20,17 @@ public class App {
         //showSynchronizedMethodDemo(true);
 
         //threadPoolExample();
-        //threadPoolFutureExample();
+        threadPoolFutureExample();
 
 
+        /*
         try {
             threadPoolDynamicTasksFutureExample();
         } catch (ExecutionException | InterruptedException e) {
             e.printStackTrace();
         }
+
+         */
     }
 
     private static void threadPoolDynamicTasksFutureExample() throws ExecutionException, InterruptedException {
@@ -68,6 +71,8 @@ public class App {
             Integer result = f.get();
             System.out.println("Result: " + result);
         }
+
+        pool.shutdown();
     }
 
     private static Integer doWork(int index) {
@@ -121,7 +126,7 @@ public class App {
         int numWorkers = Runtime.getRuntime().availableProcessors();
 
         // Uncomment next line to test what happens if you have less than 10 threads in the pool
-        // numWorkers = 5;
+        //numWorkers = 5;
 
         // Creates a thread pool that reuses a fixed number of threads
         ExecutorService pool = Executors.newFixedThreadPool(numWorkers);

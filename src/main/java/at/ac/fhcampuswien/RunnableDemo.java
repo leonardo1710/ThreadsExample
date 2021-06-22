@@ -28,7 +28,7 @@ class RunnableDemo implements Runnable {
 
         if (t == null) {
             t = new Thread (this, threadName);  // we are passing the runnable into a Thread constructor
-            t.start ();
+            t.start();
         }
     }
 }
